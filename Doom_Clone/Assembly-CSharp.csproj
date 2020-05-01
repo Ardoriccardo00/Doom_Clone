@@ -63,13 +63,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Health.cs" />
-    <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Characters\Health.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\ShootingHandler.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\DoorController.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\DoorMover.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\HazardousFloor.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\KeyCard.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\KeyCardPickup.cs" />
     <Compile Include="Assets\Scripts\MessagesHandler.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\ShootingHandler.cs" />
-    <Compile Include="Assets\Scripts\WeaponScriptable.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Weapons\WeaponScriptable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -127,8 +133,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProGrids">
+      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProGrids.Editor">
+      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -145,23 +160,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids">
-      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ProGrids.Editor">
-      <HintPath>H:/ARCHIVIO RICHI/Unity projects/Progetti/Doom_Clone/Doom_Clone/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity versions/2019.2.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

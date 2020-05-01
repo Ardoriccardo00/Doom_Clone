@@ -7,6 +7,8 @@ public class Inventory : MonoBehaviour
     public List<WeaponScriptable> weapons = new List<WeaponScriptable>();
     public WeaponScriptable activeWeapon;
 
+    public List<KeyCard> keycards = new List<KeyCard>();
+
     public static Inventory Instance { get; private set; }
 
     private void Awake()

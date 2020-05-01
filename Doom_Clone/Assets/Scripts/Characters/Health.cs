@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] float maxHealth;
-    float currentHealth;
+    [SerializeField] int maxHealth;
+    int currentHealth;
 
     void Start()
     {
@@ -19,9 +19,18 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damageTaken)
+    public int ReturnHealth()
+    {
+        return currentHealth;
+    }
+
+    public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+        if(gameObject.tag == "Player")
+        {
+            PlayerStats.Instance.FadePainRedScreen();
+        }
     }
 
     void Die()

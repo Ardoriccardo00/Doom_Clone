@@ -27,9 +27,8 @@ public class ShootingHandler : MonoBehaviour
         if(activeWeapon.isHitscan)
         {
             float range = activeWeapon.weaponRange;
-            float damage = activeWeapon.weaponDamage;
+            int damage = activeWeapon.weaponDamage;
 
-            print(activeWeapon.isHitscan);
             RaycastHit hit;
             Ray landingRay = new Ray(cameraPosition.position, cameraPosition.transform.forward);
 
