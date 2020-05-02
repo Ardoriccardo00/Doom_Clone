@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac707850dbb5b64c8342ef0a7177973, type: 3}
   m_Name: Bazooka
   m_EditorClassIdentifier: 
-  weaponDamage: 100
+  weaponDamage: 20
   weaponRange: 10
   isHitscan: 0
   bullet: {fileID: 2310981831066527180, guid: 6759bdaf0ac8db746918dac18cc367f3, type: 3}
+  splashDamage: 100

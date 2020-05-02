@@ -8,6 +8,7 @@ public class WeaponScriptable : ScriptableObject
     public float weaponRange;
     public bool isHitscan;
     public GameObject bullet;
+    public int splashDamage;
 
     /*
      * add sprite

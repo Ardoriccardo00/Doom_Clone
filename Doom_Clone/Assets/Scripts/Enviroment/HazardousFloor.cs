@@ -17,9 +17,7 @@ public class HazardousFloor : MonoBehaviour
         if(other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy")
         {
             Health targetHealth = other.gameObject.GetComponent<Health>();
-            print(targetHealth);
             counter -= Time.deltaTime/.5f;
-            print(counter);
 
             if(counter <= 0)
             {

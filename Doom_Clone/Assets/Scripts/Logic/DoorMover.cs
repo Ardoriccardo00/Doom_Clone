@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class DoorMover : MonoBehaviour
+public class DoorMover : MonoBehaviour, IEInteractable
 {
     [SerializeField] Animator animator;
     [SerializeField] bool directionLeft = false;
@@ -12,9 +12,9 @@ public class DoorMover : MonoBehaviour
         animator.GetComponent<Animator>();
     }
 
-    void Update()
+    public void Interactable()
     {
-        
+        StartCoroutine(OpenCloseDoor());
     }
 
     public void OpenDoor(bool left)
@@ -48,10 +48,5 @@ public class DoorMover : MonoBehaviour
         yield return new WaitForSeconds(2);
         MessagesHandler.Instance.WriteMessage("Start close");
         CloseDoor(directionLeft);
-    }
-
-    public void StartOpenCloseDoor()
-    {
-        StartCoroutine(OpenCloseDoor());
     }
 } 

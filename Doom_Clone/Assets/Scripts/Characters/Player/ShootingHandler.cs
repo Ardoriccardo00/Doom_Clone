@@ -44,7 +44,6 @@ public class ShootingHandler : MonoBehaviour
 
         else
         {
-            print(activeWeapon.isHitscan);
             GameObject bullet = Instantiate(activeWeapon.bullet, shootingPoint.position, Quaternion.identity);
             bullet.GetComponent<Bullet>().SetBulletDirection(shootingPoint.transform.forward);
             Destroy(bullet, 3);

@@ -2,10 +2,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class KeyCardController : MonoBehaviour
 {
-    [SerializeField] DoorMover doorMover;
+    IEInteractable doorToMove;
+    [SerializeField] GameObject doorToMoveObject;
     [SerializeField] KeyCardColor keyColor;
+
+    private void Start()
+    {
+        doorToMove = doorToMoveObject.GetComponent<IEInteractable>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -19,7 +25,7 @@ public class DoorController : MonoBehaviour
                     if(card.keyCardColor == keyColor)
                     {
                         MessagesHandler.Instance.WriteMessage("openingDoor");
-                        doorMover.StartOpenCloseDoor();
+                        doorToMove.Interactable();
                         gotRightCard = true;
                     }
                 }
