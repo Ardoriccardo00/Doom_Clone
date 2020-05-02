@@ -12,6 +12,7 @@ public class AmmoPickup : MonoBehaviour
         if(other.tag == "Player")
         {
             FindObjectOfType<Ammo>().IncreaseAmmo(ammoType, ammoAmount);
+            MessagesHandler.Instance.WriteMessage("Collected " + ammoAmount + " of " + ammoType);
             Destroy(gameObject);
         }
     }
