@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoType: 3
-  ammoAmount: 1
+  ammoAmount: 10
 --- !u!65 &42736273
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42736271}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1419,6 +1419,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7018619561027317224}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1029681569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1931246028498560864, guid: d82d803a84e12214684c7cbfda7849b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6121820446160806915}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d024c18a32599c4bab8cac73a48a142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1048940476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,7 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoType: 0
-  ammoAmount: 1
+  ammoAmount: 10
 --- !u!65 &1084806352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1554,7 +1566,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1084806350}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1696,7 +1708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128313426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16129804, y: 2.89, z: -10.84}
+  m_LocalPosition: {x: -0.16129804, y: 2.89, z: -24.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3217,6 +3229,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6121820446582786418, guid: d82d803a84e12214684c7cbfda7849b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252390, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_Name
@@ -3277,6 +3294,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121820446802252397, guid: d82d803a84e12214684c7cbfda7849b5,
+        type: 3}
+      propertyPath: maxHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6121820446802252399, guid: d82d803a84e12214684c7cbfda7849b5,
+        type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 1029681569}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d82d803a84e12214684c7cbfda7849b5, type: 3}
 --- !u!1001 &6810268122648998301
