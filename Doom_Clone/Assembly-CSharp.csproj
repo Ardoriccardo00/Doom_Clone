@@ -63,11 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Characters\Enemy\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Characters\Health.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Inventory.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\ShootingHandler.cs" />
+    <Compile Include="Assets\Scripts\Enviroment\CollectibleItem.cs" />
     <Compile Include="Assets\Scripts\Enviroment\HazardousFloor.cs" />
     <Compile Include="Assets\Scripts\Logic\DoorMover.cs" />
     <Compile Include="Assets\Scripts\Logic\Elevator.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Assets\Scripts\Logic\KeyCardPickup.cs" />
     <Compile Include="Assets\Scripts\Logic\LogicInterface.cs" />
     <Compile Include="Assets\Scripts\Logic\Switch.cs" />
+    <Compile Include="Assets\Scripts\Logic\Teleporter.cs" />
     <Compile Include="Assets\Scripts\MessagesHandler.cs" />
     <Compile Include="Assets\Scripts\Weapons\Ammo.cs" />
     <Compile Include="Assets\Scripts\Weapons\AmmoPickup.cs" />
