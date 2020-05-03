@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
+    [Header("Components")]
     [SerializeField] TextMeshProUGUI healthText;
-    Health playerHealth;
-    /*[SerializeField]*/ Animator redScreenAnimator;
     [SerializeField] Image redScreen;
 
+    Health playerHealth;
+    Animator redScreenAnimator;
+
+    #region Singleton
     public static PlayerStats Instance { get; private set; }
 
     private void Awake()
@@ -24,6 +27,7 @@ public class PlayerStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    #endregion
 
     void Start()
     {

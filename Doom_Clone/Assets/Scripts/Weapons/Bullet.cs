@@ -8,10 +8,11 @@ public class Bullet : MonoBehaviour
     [SerializeField] float speed = 10f;
     Vector3 direction;
     Rigidbody rb;
-    //Health targetHealth;
+    AudioSource audioSource;
     
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
     }    
 
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
                 targetHealth.TakeDamage(weapon.weaponDamage);
                 MessagesHandler.Instance.WriteMessage("Hit " + targetHealth.gameObject.name + " that took " + weapon.weaponDamage + " damage");
             }
+            audioSource.Play();
             damageArea.SetActive(true);
             Destroy(gameObject, .08f);
         }      

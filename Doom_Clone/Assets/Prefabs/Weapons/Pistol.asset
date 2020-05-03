@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac707850dbb5b64c8342ef0a7177973, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  ammoType: 0
+  bullet: {fileID: 0}
+  flare: {fileID: 21300000, guid: 2ee548759a6eba3489e2a733922dd0a4, type: 3}
+  sprite: {fileID: 21300000, guid: 3ed4a83c8debfb14e940ee89f82c9950, type: 3}
+  shootingSound: {fileID: 8300000, guid: 8c3ce049d47cebc4aabd24822e7a6271, type: 3}
+  bulletSound: {fileID: 8300000, guid: 8c3ce049d47cebc4aabd24822e7a6271, type: 3}
   weaponDamage: 20
   weaponRange: 100
+  weaponDelay: 0
   isHitscan: 1
-  bullet: {fileID: 0}
+  splashDamage: 0

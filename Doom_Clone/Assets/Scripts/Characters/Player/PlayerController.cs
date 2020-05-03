@@ -3,24 +3,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    CharacterController controller;
+    [Header("Movement Stats")]
     [SerializeField] float originalSpeed = 12;
-    float currentSpeed;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] float jumpHeigh = 3;
 
-    public float mouseSensitivity = 10;
-    float xRot = 0;
-
-    bool isGrounded;
-    Vector3 velocity;
-
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [Header("Ground Check")]
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float groundDistance = 0.4f;
+    [SerializeField] LayerMask groundMask;
 
     [SerializeField] GameObject playerCamera;
-    Animator cameraAnimator;
+    [SerializeField] float mouseSensitivity = 10;
+
+    float currentSpeed;
+    CharacterController controller;
+    Vector3 velocity;
+    bool isGrounded;
+
+    Animator cameraAnimator; //Activate later
 
     void Start()
     {
@@ -35,11 +36,6 @@ public class PlayerController : MonoBehaviour
         ApplyGravity();
         MoveCharacter();
         MouseLook();
-    }
-
-    private void LateUpdate()
-    {
-       
     }
 
     private void ApplyGravity()
@@ -77,23 +73,11 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed = originalSpeed;
         }
-
-        /*if(move.x > .1f || move.z > .1f)
-        {
-            print("moving");
-            cameraAnimator.SetBool("isMoving", true);
-        }
-        else
-        {
-            cameraAnimator.SetBool("isMoving", false);
-            print(" not moving");
-        }*/
     }
 
     private void MouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         transform.Rotate(new Vector3(0f, mouseX * mouseSensitivity, 0f) * Time.deltaTime, Space.Self);
-        //playerBody.Rotate(Vector3.up * mouseX);
     }
 } 

@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Bazooka
   m_EditorClassIdentifier: 
   ammoType: 3
+  bullet: {fileID: 2310981831066527180, guid: 6759bdaf0ac8db746918dac18cc367f3, type: 3}
+  flare: {fileID: 21300000, guid: a871bb80e5d34764ab1a38fa01d187c7, type: 3}
+  sprite: {fileID: 21300000, guid: caaf9fdb5155c584f96ae3b412f9aee6, type: 3}
+  shootingSound: {fileID: 8300000, guid: 8c3ce049d47cebc4aabd24822e7a6271, type: 3}
+  bulletSound: {fileID: 8300000, guid: 8c3ce049d47cebc4aabd24822e7a6271, type: 3}
   weaponDamage: 20
   weaponRange: 10
-  isHitscan: 0
-  bullet: {fileID: 2310981831066527180, guid: 6759bdaf0ac8db746918dac18cc367f3, type: 3}
-  splashDamage: 50
   weaponDelay: 1
+  isHitscan: 0
+  splashDamage: 50
