@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class ShootingHandler : MonoBehaviour
@@ -13,6 +14,8 @@ public class ShootingHandler : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
 
     bool canShoot = true;
+
+    public event EventHandler onShootEvent;
 
     void Start()
     {
@@ -38,6 +41,7 @@ public class ShootingHandler : MonoBehaviour
 
         if(ammoSlot.GetCurrentAmmo(activeWeapon.ammoType) > 0) //if the ammo of the type of the active weapon you hold are more than 0
         {
+            onShootEvent?.Invoke(this, EventArgs.Empty);
             PlayShootingSound();
 
             if(activeWeapon.isHitscan) //If the weapon is hitscan shoot ray

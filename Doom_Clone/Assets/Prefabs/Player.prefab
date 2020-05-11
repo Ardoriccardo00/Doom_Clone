@@ -297,7 +297,7 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 90
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
@@ -399,6 +399,7 @@ MonoBehaviour:
   activeWeapon: {fileID: 0}
   keycards:
   - {fileID: 11400000, guid: b0108b5ed6ca52648acda54f7b41d039, type: 2}
+  weaponSpriteObject: {fileID: 0}
 --- !u!114 &1931246028498560864
 MonoBehaviour:
   m_ObjectHideFlags: 0
