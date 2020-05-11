@@ -1,17 +1,14 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Switch : MonoBehaviour
 {
-    //IEInteractable interactableToActivate;
-    //[SerializeField] GameObject interactableToActivateObject;
-
-    public UnityEvent onSwitchInteract;
+    IEInteractable interactableToActivate;
+    [SerializeField] GameObject interactableToActivateObject;
 
     void Start()
     {
-        //interactableToActivate = interactableToActivateObject.GetComponent<IEInteractable>();
+        interactableToActivate = interactableToActivateObject.GetComponent<IEInteractable>();
     }    
 
     void Update()
@@ -24,8 +21,7 @@ public class Switch : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             if(Input.GetKeyDown(KeyCode.E))
-                //interactableToActivate.Interactable();
-                onSwitchInteract ?.Invoke();
+                interactableToActivate.Interactable();
         }
     }
 } 

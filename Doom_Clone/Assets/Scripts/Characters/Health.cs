@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -10,7 +9,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-    }
+    }    
 
     void Update()
     {
@@ -38,4 +37,4 @@ public class Health : MonoBehaviour
     {
         Destroy(gameObject);
     }
-}
+} 

@@ -6,8 +6,6 @@ public class DoorMover : MonoBehaviour, IEInteractable
 {
     [SerializeField] Animator animator;
     [SerializeField] bool directionLeft = false;
-    [SerializeField] float doorDelay = 1f;
-    bool isAlreadyWorking = false;
 
     void Start()
     {
@@ -45,15 +43,10 @@ public class DoorMover : MonoBehaviour, IEInteractable
 
     public IEnumerator OpenCloseDoor()
     {
-        if(!isAlreadyWorking)
-        {
-            isAlreadyWorking = true;
-            MessagesHandler.Instance.WriteMessage("Start open");
-            OpenDoor(directionLeft);
-            yield return new WaitForSeconds(doorDelay);
-            MessagesHandler.Instance.WriteMessage("Start close");
-            CloseDoor(directionLeft);
-            isAlreadyWorking = false;
-        }      
+        MessagesHandler.Instance.WriteMessage("Start open");
+        OpenDoor(directionLeft);
+        yield return new WaitForSeconds(2);
+        MessagesHandler.Instance.WriteMessage("Start close");
+        CloseDoor(directionLeft);
     }
 } 
