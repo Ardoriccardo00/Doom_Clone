@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6810268121665038063
 Transform:
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810268121665038060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.51, z: 0.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e42c20288682d4e8b93090a742ca89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorToMove: {fileID: 6810268122532314576}
+  doorToMoveObject: {fileID: 6810268122532314582}
   keyColor: 1
 --- !u!1 &6810268122532314582
 GameObject:
@@ -79,7 +79,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &6810268122532314573
 Transform:
@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6810268122532314577}
   directionLeft: 1
+  doorDelay: 1
 --- !u!65 &6810268122532314572
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,11 +6,12 @@ using UnityEngine.AI;
 public class EnemyBehaviour : MonoBehaviour
 {
     PlayerController player;
-    Health playerHealth;
+    Transform target;
     ShootingHandler playerShootingHandler;
     bool canAttack = true;
+    bool isTriggered = false;
+    [SerializeField] float turnSpeed = 10;
     [SerializeField] float triggerDistance = 20;
-    [SerializeField] int damage = 10;
     [SerializeField] float damageDelay = 1;
     NavMeshAgent agent;
     [SerializeField] EnemyAttack shootingHandler;
@@ -18,7 +19,6 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        playerHealth = player.GetComponent<Health>();
         playerShootingHandler = player.GetComponent<ShootingHandler>();
         agent = GetComponent<NavMeshAgent>();
         shootingHandler = GetComponent<EnemyAttack>();
@@ -28,23 +28,50 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) < triggerDistance)
+        if(isTriggered)
         {
-            FollowPlayer();
+            FollowTarget();
+        }
+
+        else if(Vector3.Distance(transform.position, player.transform.position) < triggerDistance)
+        {
+            target = player.transform;
+            isTriggered = true;
         }
     }
 
     void OnPlayerShoot(object sender, EventArgs e)
     {
-        FollowPlayer();
+        target = player.transform;
+        FollowTarget();
     }
 
-    private void FollowPlayer()
+    void OnDamageTaken()
+    {
+        foreach(EnemyBehaviour enemy in EnemyHandler.Instance.activeEnemies)
+        {
+            if(Vector3.Distance(transform.position, enemy.transform.position) < triggerDistance)
+            {
+                target = enemy.transform;
+                isTriggered = true;
+            }
+        }
+    }
+
+    private void FaceTarget()
+    {
+        Vector3 direction = (target.transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+    }
+
+    private void FollowTarget()
     {
         print("Attack");
-        agent.SetDestination(player.transform.position);
+        FaceTarget();
+        agent.SetDestination(target.transform.position);
 
-        if(Vector3.Distance(transform.position, player.transform.position) < agent.stoppingDistance)
+        if(Vector3.Distance(transform.position, target.transform.position) < agent.stoppingDistance)
         {
             if(canAttack)
             {
@@ -57,7 +84,6 @@ public class EnemyBehaviour : MonoBehaviour
     {
         canAttack = false;
         yield return new WaitForSeconds(damageDelay);
-        //playerHealth.TakeDamage(damage);
         shootingHandler.StartShot();
         yield return new WaitForSeconds(damageDelay / 2);
         canAttack = true;

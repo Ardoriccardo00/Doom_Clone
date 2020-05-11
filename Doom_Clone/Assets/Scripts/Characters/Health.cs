@@ -27,6 +27,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageTaken)
     {
+        BroadcastMessage("OnDamageTaken");
         currentHealth -= damageTaken;
         if(gameObject.tag == "Player")
         {

@@ -7,6 +7,7 @@ public class KeyCardPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        MessagesHandler.Instance.WriteMessage("You got a " + Convert.ToString(keyCard.keyCardColor) + " keycard");
         Inventory.Instance.keycards.Add(keyCard);
         Destroy(gameObject);
     }

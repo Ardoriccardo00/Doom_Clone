@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fffe7eab9871504f903ee032a38542b, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: 
-  keyCardColor: 1
+  keyCardColor: 2

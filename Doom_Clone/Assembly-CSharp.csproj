@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Characters\Enemy\EnemyHandler.cs" />
     <Compile Include="Assets\Scripts\Characters\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Characters\Health.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Inventory.cs" />

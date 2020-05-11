@@ -37,12 +37,12 @@ public class MessagesHandler : MonoBehaviour
     public void WriteMessage(string message)
     {
         if(!isBusy)
-            StartCoroutine(FadeMessage(message));
+            StartCoroutine(FadeMessageInAndOut(message));
         else
             messageText.text = message;
     }
 
-   IEnumerator FadeMessage(string _message)
+    IEnumerator FadeMessageInAndOut(string _message)
     {
         isBusy = true;
         animator.SetTrigger("FadeIn");
@@ -51,4 +51,9 @@ public class MessagesHandler : MonoBehaviour
         animator.SetTrigger("FadeOut");
         isBusy = false;
     }
+
+    /*IEnumerator FadeMessageOut(string _message)
+    {
+
+    }*/
 } 

@@ -38,6 +38,11 @@ public class PlayerController : MonoBehaviour
         MouseLook();
     }
 
+    void OnDamageTaken()
+    {
+        //
+    }
+
     private void ApplyGravity()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);

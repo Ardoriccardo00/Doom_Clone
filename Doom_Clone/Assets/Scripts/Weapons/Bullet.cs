@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] GameObject damageArea;
     [SerializeField] WeaponScriptable weapon;
     [SerializeField] float speed = 10f;
+    [SerializeField] bool canDamagePlayer;
     Vector3 direction;
     Rigidbody rb;
     AudioSource audioSource;
@@ -28,18 +29,15 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag != "Player")
+        if(collision.transform.tag == "Enemy" || collision.transform.tag == "Player" && canDamagePlayer)
         {
-            if(collision.transform.tag == "Enemy")
-            {
-                Health targetHealth = collision.transform.GetComponent<Health>();
-                targetHealth.TakeDamage(weapon.weaponDamage);
-                MessagesHandler.Instance.WriteMessage("Hit " + targetHealth.gameObject.name + " that took " + weapon.weaponDamage + " damage");
-            }
-            audioSource.Play();
-            damageArea.SetActive(true);
-            Destroy(gameObject, .08f);
-        }      
+            Health targetHealth = collision.transform.GetComponent<Health>();
+            targetHealth.TakeDamage(weapon.weaponDamage);
+            MessagesHandler.Instance.WriteMessage("Hit " + targetHealth.gameObject.name + " that took " + weapon.weaponDamage + " damage");
+        }
+        audioSource.Play();
+        damageArea.SetActive(true);
+        Destroy(gameObject, .08f);
     }
 
     private void OnTriggerEnter(Collider other)
