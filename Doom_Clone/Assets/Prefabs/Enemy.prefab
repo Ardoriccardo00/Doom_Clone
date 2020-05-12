@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1532970887706324349}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 2649420991492189296}
-  activeWeapon: {fileID: 0}
+  activeWeapon: {fileID: 11400000, guid: 7a3d30f557bc7004ca800dbe33a4812b, type: 2}
 --- !u!82 &1532970887706324349
 AudioSource:
   m_ObjectHideFlags: 0

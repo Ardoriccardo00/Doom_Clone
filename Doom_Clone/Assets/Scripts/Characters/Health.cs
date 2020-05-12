@@ -29,6 +29,7 @@ public class Health : MonoBehaviour
     {
         BroadcastMessage("OnDamageTaken");
         currentHealth -= damageTaken;
+
         if(gameObject.tag == "Player")
         {
             PlayerStats.Instance.FadePainRedScreen();
@@ -37,6 +38,6 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        BroadcastMessage("OnDeath");
     }
 }

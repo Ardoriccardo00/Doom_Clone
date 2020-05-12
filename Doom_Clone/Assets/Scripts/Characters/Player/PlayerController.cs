@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     CharacterController controller;
     Vector3 velocity;
     bool isGrounded;
+    bool canMove = true;
 
     Animator cameraAnimator; //Activate later
 
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void OnDamageTaken()
     {
-        //
+        return;
     }
 
     private void ApplyGravity()
@@ -59,30 +60,43 @@ public class PlayerController : MonoBehaviour
 
     private void MoveCharacter()
     {
-        float movementX = Input.GetAxis("Horizontal");
-        float movementZ = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * movementX + transform.forward * movementZ;
-        controller.Move(move * currentSpeed * Time.deltaTime);
-
-        if(Input.GetButtonDown("Jump") && isGrounded == true)
+        if(canMove)
         {
-            velocity.y = Mathf.Sqrt(jumpHeigh * -2 * gravity);
-        }
+            float movementX = Input.GetAxis("Horizontal");
+            float movementZ = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            currentSpeed = originalSpeed * 2;
-        }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            currentSpeed = originalSpeed;
-        }
+            Vector3 move = transform.right * movementX + transform.forward * movementZ;
+            controller.Move(move * currentSpeed * Time.deltaTime);
+
+            if(Input.GetButtonDown("Jump") && isGrounded == true)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeigh * -2 * gravity);
+            }
+
+            if(Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                currentSpeed = originalSpeed * 2;
+            }
+            else if(Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                currentSpeed = originalSpeed;
+            }
+        }       
     }
 
     private void MouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         transform.Rotate(new Vector3(0f, mouseX * mouseSensitivity, 0f) * Time.deltaTime, Space.Self);
+    }
+
+    public void ToggleMovement(bool condition)
+    {
+        canMove = condition;
+    }
+
+    void OnDeath()
+    {
+        ToggleMovement(false);
     }
 } 

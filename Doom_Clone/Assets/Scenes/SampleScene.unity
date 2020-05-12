@@ -2329,7 +2329,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646610533}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: def36145c8737c143aa7137db794da82, type: 3}
   m_Name: 
@@ -3502,7 +3502,7 @@ PrefabInstance:
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.66
+      value: 31.93
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
@@ -3517,22 +3517,22 @@ PrefabInstance:
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9501157
+      value: -0.6900618
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.31189787
+      value: 0.72375053
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
@@ -3547,7 +3547,7 @@ PrefabInstance:
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 143.653
+      value: -87.27
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252393, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
@@ -3557,7 +3557,7 @@ PrefabInstance:
     - target: {fileID: 6121820446802252397, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6121820446802252398, guid: d82d803a84e12214684c7cbfda7849b5,
         type: 3}

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        
+        SpawnEnemies();
     }    
 
     void Update()
@@ -27,7 +27,8 @@ public class EnemySpawner : MonoBehaviour
 
             var newPos = new Vector3(newx, newy, newz);
 
-            Instantiate(enemyPrefab, newPos, Quaternion.identity);
+            var newEnemy = Instantiate(enemyPrefab, newPos, Quaternion.identity);
+            EnemyHandler.Instance.AddEnemy(newEnemy.GetComponent<EnemyBehaviour>());
         }
     }
 } 

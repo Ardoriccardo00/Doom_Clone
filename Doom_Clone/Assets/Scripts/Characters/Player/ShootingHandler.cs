@@ -29,7 +29,6 @@ public class ShootingHandler : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            print(canShoot);
             if(canShoot)
                 StartCoroutine(Shoot());
         }

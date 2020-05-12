@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class EnemyBehaviour : MonoBehaviour
 {
     PlayerController player;
-    Transform target;
-    ShootingHandler playerShootingHandler;
+    [SerializeField] Transform target;
+    public ShootingHandler playerShootingHandler;
     bool canAttack = true;
     bool isTriggered = false;
     [SerializeField] float turnSpeed = 10;
@@ -42,33 +42,40 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnPlayerShoot(object sender, EventArgs e)
     {
-        target = player.transform;
-        FollowTarget();
+        if(target != player)
+        {
+            target = player.transform;
+            FaceTarget();
+            FollowTarget();
+        }     
     }
 
     void OnDamageTaken()
     {
-        foreach(EnemyBehaviour enemy in EnemyHandler.Instance.activeEnemies)
+        print("Enemy damage taken");
+        /*foreach(EnemyBehaviour enemy in EnemyHandler.Instance.activeEnemies)
         {
             if(Vector3.Distance(transform.position, enemy.transform.position) < triggerDistance)
             {
                 target = enemy.transform;
                 isTriggered = true;
             }
-        }
+        }*/
     }
 
     private void FaceTarget()
     {
-        Vector3 direction = (target.transform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        if(target != null)
+        {
+            Vector3 direction = (target.transform.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+        }    
     }
 
     private void FollowTarget()
     {
         print("Attack");
-        FaceTarget();
         agent.SetDestination(target.transform.position);
 
         if(Vector3.Distance(transform.position, target.transform.position) < agent.stoppingDistance)
@@ -87,6 +94,12 @@ public class EnemyBehaviour : MonoBehaviour
         shootingHandler.StartShot();
         yield return new WaitForSeconds(damageDelay / 2);
         canAttack = true;
+    }
+
+    void OnDeath()
+    {
+        playerShootingHandler.onShootEvent -= OnPlayerShoot;
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()

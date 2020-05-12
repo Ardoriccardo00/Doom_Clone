@@ -36,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
 
             if(Physics.Raycast(landingRay, out hit, range))
             {
-                if(hit.transform.tag == "Enemy")
+                if(hit.transform.tag == "Enemy" || hit.transform.tag == "Player")
                 {
                     MessagesHandler.Instance.WriteMessage("hit " + hit.transform.name + " with " + activeWeapon.weaponDamage);
                     hit.transform.GetComponent<Health>().TakeDamage(damage);
@@ -56,7 +56,10 @@ public class EnemyAttack : MonoBehaviour
 
     private void PlayShootingSound()
     {
-        audioSource.clip = activeWeapon.shootingSound;
-        audioSource.Play();
+        if(audioSource != null)
+        {
+            audioSource.clip = activeWeapon.shootingSound;
+            audioSource.Play();
+        }       
     }
 } 
